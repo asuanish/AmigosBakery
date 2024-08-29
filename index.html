@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)file:///Users/anishjoglekar/Documents/js-basics/index.html?numberInput=1#products -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./javascript.js" defer=""></script>
+    <title>Amigo Bakery</title>
+  </head>
+  <body class="light-mode">
+    <img
+      onclick="toggleMode();"
+      src="./images/moon.png"
+      id="theme"
+      alt="theme selector"
+      width="50"
+      height="50"
+    />
+    <header>
+      <img src="./images/logo.png" id="logo" alt="amigos bakery logo" />
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="file:///Users/anishjoglekar/Documents/js-basics/index.html?numberInput=1#about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="file:///Users/anishjoglekar/Documents/js-basics/index.html?numberInput=1#products"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="file:///Users/anishjoglekar/Documents/js-basics/index.html?numberInput=1#game"
+              >Game</a
+            >
+          </li>
+          <li>
+            <a
+              href="file:///Users/anishjoglekar/Documents/js-basics/index.html?numberInput=1#contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <section id="aboutContainer">
+          <img
+            src="./images/outside.jpg"
+            width="600"
+            height="400"
+            alt="inside bakery"
+          />
+          <p>
+            Sweet treat with a seashell surprise: Conchas, a Mexican sweet bread
+            (pan dulce), live up to their name ("concha" means "shell" in
+            Spanish) with their distinctive shell-like topping. Flavorful inside
+            and out: The rich, soft dough, typically flavored with vanilla or
+            chocolate, is a perfect base for the sugary, crumbly topping. A
+            taste of Mexico: Conchas are a beloved part of Mexican cuisine,
+            enjoyed with coffee or hot chocolate. You'll find them in most
+            Mexican bakeries, and they're popular in other parts of Latin
+            America too.
+          </p>
+        </section>
+      </section>
+      <section id="products">
+        <h2>Products</h2>
+        <section id="product1" class="hiddenItem">
+          <h3>Conchas</h3>
+          <img
+            src="./images/conchas.webp"
+            width="600"
+            height="400"
+            alt="conchas"
+          />
+          <p>
+            Sweet treat with a seashell surprise: Conchas, a Mexican sweet bread
+            (pan dulce), live up to their name ("concha" means "shell" in
+            Spanish) with their distinctive shell-like topping. Flavorful inside
+            and out: The rich, soft dough, typically flavored with vanilla or
+            chocolate, is a perfect base for the sugary, crumbly topping. A
+            taste of Mexico: Conchas are a beloved part of Mexican cuisine,
+            enjoyed with coffee or hot chocolate. You'll find them in most
+            Mexican bakeries, and they're popular in other parts of Latin
+            America too.
+          </p>
+        </section>
+        <section id="product2" class="currentItem">
+          <h3>Niño Envuelto</h3>
+          <img
+            src="./images/nino.jpg"
+            width="600"
+            height="400"
+            alt="niño envuelto"
+          />
+          <p>
+            A Mexican delight: Niño Envuelto This delightful dessert, also known
+            as a Swiss roll, is a light and airy sponge cake rolled around a
+            sweet filling. Imagine fluffy cake embracing fruit preserves, jelly,
+            or even cream! Often dusted with powdered sugar and adorned with
+            fruits or chocolate, Niño Envuelto translates to "wrapped child" in
+            Spanish, reflecting its lovely rolled appearance. Enjoyed for its
+            contrasting textures and flavors, this is a popular treat for
+            celebrations and special occasions.
+          </p>
+        </section>
+        <section id="product3" class="hiddenItem">
+          <h3>Churros</h3>
+          <img
+            src="./images/churros.jpg"
+            width="600"
+            height="400"
+            alt="churros"
+          />
+          <p>
+            Crunchy, airy perfection: Churros, those delightful fried-dough
+            pastries, are a staple of both Spanish and Latin American cuisine.
+            Simple yet delicious: Made with a basic dough of flour, water, and
+            salt, churros are shaped with a star-shaped nozzle for their
+            signature ridges and then deep-fried to crispy perfection. A flavor
+            explosion: Coated in sugar for a delightful sweetness, churros can
+            be enjoyed plain or dipped in chocolate, caramel, or dulce de leche.
+            The contrasting textures - a crunchy exterior and a soft, airy
+            inside - make them truly irresistible. Sweet on the go: Whether you
+            find them at street vendors, churrerías, or fairs, churros are a
+            popular handheld treat or dessert.
+          </p>
+        </section>
+        <section id="productButtons">
+          <button id="btn1">Conchas</button>
+          <button id="btn2">Niño Envuelto</button>
+          <button id="btn3">Churros</button>
+        </section>
+      </section>
+      <section id="game">
+        <h2>Want to see if you'll win a prize?</h2>
+        <p>Click on the button to see if you land a prize!</p>
+
+        <form id="guessingGame">
+          <label for="userDisplay">Pick a number between 1 and 10.</label>
+          <input type="text" name="numberInput" id="userDisplay" required="" />
+
+          <div id="message"></div>
+
+          <button type="submit" id="gameSubmit">See If You Won</button>
+        </form>
+      </section>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Please tell us what you think!</p>
+        <form id="contactForm">
+          <label for="name">Full Name<span>*</span></label>
+          <input type="text" id="name" name="name" required="" />
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" />
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" />
+          <fieldset>
+            <legend>Preferred Method of Contact</legend>
+            <input
+              type="radio"
+              id="phoneRadio"
+              name="preferredMethod"
+              required=""
+            />
+            <label for="phoneRadio">Phone</label>
+            <input
+              type="radio"
+              id="emailRadio"
+              name="preferredMethod"
+              required=""
+            />
+            <label for="emailRadio">Email</label>
+          </fieldset>
+          <label for="comments">Comments<span>*</span></label>
+          <input type="text" id="comments" required="" />
+          <div id="errorList"></div>
+          <button type="submit" id="contactSubmit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <small>Copyright © 2024 - Amigos Bakery</small>
+      <p>This site is for entertainment and educational purposes only.</p>
+
+      <section id="address">
+        <p>
+          430 Main Street<br />
+          Chandler, AZ 85286
+        </p>
+      </section>
+
+      <section id="hours">
+        <p>
+          Monday - Friday: 8am-5pm<br />
+          Saturday: 9am-6pm<br />
+          Sunday: CLOSED
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>

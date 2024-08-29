@@ -1,0 +1,376 @@
+:root {
+  --black: #000000;
+  --width: 1280px;
+  --dark-blue: #37474f;
+  --mint: #7cb2a2;
+  --light-mint: #c8e7de;
+  --dark-mint: #699582;
+  --white: #ffffff;
+  --dark-gray: #222;
+  --font: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0 auto;
+  font-family: var(--font);
+}
+
+header {
+  padding: 20px;
+  max-width: var(--width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 450px 1fr;
+}
+
+#logo {
+  width: 160px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+main {
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+header,
+main,
+footer {
+  max-width: calc(1280px - 32px);
+  margin: 0 auto;
+}
+
+/* Light/Dark Themes */
+
+#theme {
+  position: absolute;
+  right: 80px;
+  top: 40px;
+}
+
+/* Light Mode */
+
+body.light-mode {
+  background-color: var(--white);
+  color: #000;
+}
+
+/* Navigation */
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+  padding-left: 0px;
+  padding-left: 100px;
+}
+
+nav ul li {
+  list-style-type: none;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: var(--white);
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px 16px;
+  margin: 0 auto;
+  background-color: var(--dark-blue);
+}
+
+/* About */
+
+#about {
+  text-align: center;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  margin-top: 2rem;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+body.light-mode #about {
+  background-color: var(--light-mint);
+  color: #000;
+}
+
+#aboutContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+/* Products */
+
+#products {
+  padding: 1rem;
+  background-color: var(--dark-blue);
+  margin-top: 2rem;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#products img {
+  grid-row: 1/-1;
+  grid-column: 2/-1;
+}
+
+#productsButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  width: fit-content;
+  position: relative;
+  left: 12%;
+  top: -80px;
+}
+
+#products .currentItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 1rem;
+}
+
+.hiddenItem {
+  display: none;
+}
+
+body.light-mode #products {
+  background-color: var(--light-mint);
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  border-radius: 50px;
+  color: var(--dark-gray);
+  background-color: var(--mint);
+}
+
+/* Game */
+
+#game {
+  text-align: center;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  margin-top: 2rem;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#game form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#game h2 {
+  color: var(--mint);
+}
+
+#gameSubmit {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 250px;
+}
+
+#guessingGame label {
+  font-family: var(--font);
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#guessingGame input {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+
+#message {
+  color: red;
+}
+
+p span {
+  color: red;
+}
+
+body.light-mode #game {
+  background-color: var(--light-mint);
+  color: #000;
+}
+
+body.light-mode #game h2 {
+  color: var(--dark-gray);
+}
+
+body.light-mode button#gameSubmit {
+  color: var(--dark-gray);
+  background-color: var(--mint);
+}
+
+/* Contact */
+
+#contact {
+  text-align: center;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#contact h2 {
+  color: var(--mint);
+  text-align: center;
+}
+
+#contact p {
+  text-align: center;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  width: calc(1280px - 32px);
+  margin: 0px;
+}
+
+fieldset {
+  display: flex;
+  width: 20vw;
+}
+
+form label {
+  display: block;
+  font-family: var(--font);
+  font-weight: 400;
+  padding-bottom: 0px;
+  margin-top: 10px;
+}
+form input {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  border: 2px solid var(--dark-blue);
+}
+
+form input.error {
+  border: 2px solid red;
+}
+
+fieldset {
+  display: flex;
+  border: none;
+  margin-top: 10px;
+}
+
+fieldset legend {
+  margin-left: -15px;
+  margin-top: 10px;
+  font-family: var(--font);
+}
+
+input[type="radio"] {
+  width: 40px;
+}
+
+#comments {
+  margin-bottom: 30px;
+}
+
+#contactSubmit {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 100;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 40px;
+  color: var(--dark-gray);
+  background-color: var(--mint);
+  width: 200px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+body.light-mode #contact {
+  background-color: var(--light-mint);
+  color: var(--black);
+}
+
+body.light-mode #contact h2 {
+  color: var(--black);
+}
+
+body.light-mode #contact p {
+  color: var(--black);
+}
+
+.hide {
+  display: none;
+}
+
+#errorList {
+  color: red;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: var(--font);
+}
+
+footer p {
+  margin-top: 55px;
+}
+
+footer small {
+  margin-top: 15px;
+}
+
+footer p,
+footer small {
+  grid-column: 2 / 3;
+  grid-row: 1 / 1;
+}
+
+footer #address p,
+footer #hours p {
+  margin-top: 10px;
+}
