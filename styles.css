@@ -112,10 +112,29 @@ body.light-mode #about {
   gap: 30px;
 }
 
-/* Products */
+/* Pan Dulce */
 
-#products {
+#bakery-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.carousel img {
+  width: 100%;
+  border-radius: 10px;
+}
+.carousel p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Favorite */
+
+#favorite {
+  text-align: center;
   padding: 1rem;
+  color: var(--white);
   background-color: var(--dark-blue);
   margin-top: 2rem;
   margin: 0 auto;
@@ -124,43 +143,39 @@ body.light-mode #about {
   margin-bottom: 20px;
 }
 
-#products img {
-  grid-row: 1/-1;
-  grid-column: 2/-1;
+#favorite-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-#productsButtons {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  width: fit-content;
-  position: relative;
-  left: 12%;
-  top: -80px;
+#favorite h2 {
+  color: var(--mint);
 }
 
-#products .currentItem {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  gap: 1rem;
+#favoriteNumber {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
 }
 
-.hiddenItem {
-  display: none;
-}
-
-body.light-mode #products {
-  background-color: var(--light-mint);
-}
-
-button {
-  padding: 1rem;
+#favoriteSubmit {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 100;
   border: none;
-  box-shadow: var(--box-shadow);
   border-radius: 50px;
+  padding: 20px 40px;
   color: var(--dark-gray);
   background-color: var(--mint);
+  width: 200px;
+  margin: 0 auto;
+}
+
+#favorite-input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 /* Game */
@@ -188,9 +203,16 @@ button {
 }
 
 #gameSubmit {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 100;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 40px;
+  color: var(--dark-gray);
+  background-color: var(--mint);
+  width: 200px;
   margin: 0 auto;
-  margin-top: 30px;
-  width: 250px;
 }
 
 #guessingGame label {

@@ -21,23 +21,28 @@ function toggleMode() {
   }
 }
 
-// Button Function
+// Favorite Pan Dulce Function (Web Storage)
 
-function showProduct(event) {
-  const elemId = event.target.id;
-  const selectedNumber = elemId.charAt(elemId.length - 1);
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("favorite-form");
+  const input = document.getElementById("favoriteSubmit");
+  const display = document.getElementById("favorite-display");
 
-  for (let i = 1; i <= 3; i++) {
-    const product = document.getElementById("product" + i);
-    if (i === parseInt(selectedNumber)) {
-      product.classList.remove("hiddenItem");
-      product.classList.add("currentItem");
-    } else {
-      product.classList.remove("currentItem");
-      product.classList.add("hiddenItem");
-    }
+  const storedFavorite = localStorage.getItem("favoritePanDulce");
+  if (storedFavorite) {
+    display.textContent = `Your favorite is: ${storedFavorite}`;
   }
-}
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const favorite = input.value.trim();
+    if (favorite !== "") {
+      localStorage.setItem("favoritePanDulce", favorite);
+      display.textContent = `Your favorite is: ${favorite}`;
+      input.value = "";
+    }
+  });
+});
 
 // Game Function
 
