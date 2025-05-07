@@ -1,14 +1,14 @@
-<!-- New new -->
+<!-- Amigos Bakery 2.0 -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./javascript.js" defer></script>
+    <title>Amigo Bakery</title>
 
-    <!-- Slick Carousel -->
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -19,11 +19,15 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+    <script src="./javascript.js" defer></script>
+
     <script>
       $(document).ready(function () {
         $(".carousel").slick({
@@ -35,8 +39,6 @@
         });
       });
     </script>
-
-    <title>Amigo Bakery</title>
   </head>
   <body class="light-mode">
     <img
@@ -59,6 +61,9 @@
         </ul>
       </nav>
     </header>
+
+    <!-- About -->
+
     <main>
       <section id="about">
         <h2>About</h2>
@@ -67,12 +72,11 @@
             src="./images/outside.jpg"
             width="600"
             height="400"
-            alt="inside bakery"
+            alt="outside bakery"
           />
           <p>
-            Sweet treat with a seashell surprise: Conchas, a Mexican sweet bread
-            (pan dulce), live up to their name ("concha" means "shell" in
-            Spanish) with their distinctive shell-like topping...
+            Local Mexican bakery offering popular sweets that can be enjoyed by
+            everyone!
           </p>
         </section>
       </section>
@@ -89,7 +93,7 @@
             <p>Churros</p>
           </div>
           <div>
-            <img src="images/nino.jpg" alt="Nino" />
+            <img src="images/nino.jpg" alt="Niño Envuelto" />
             <p>Niño Envuelto</p>
           </div>
         </div>
@@ -98,14 +102,12 @@
       <section id="favorite">
         <h2>Your Favorite</h2>
         <form id="favorite-form">
-          <label for="favorite-input">What’s your favorite?</label>
+          <label for="favoriteNumber">What’s your favorite?</label>
           <input type="text" id="favoriteNumber" placeholder="Favorite" />
           <button type="submit" id="favoriteSubmit">Save</button>
         </form>
         <p id="favorite-display"></p>
       </section>
-
-      <!-- Old products -->
 
       <section id="game">
         <h2>Want to see if you'll win a prize?</h2>
@@ -124,10 +126,13 @@
         <form id="contactForm">
           <label for="name">Full Name<span>*</span></label>
           <input type="text" id="name" name="name" required />
+
           <label for="phone">Phone Number</label>
           <input type="text" id="phone" name="phone" />
+
           <label for="email">Email Address</label>
           <input type="text" id="email" name="email" />
+
           <fieldset>
             <legend>Preferred Method of Contact</legend>
             <input
@@ -137,6 +142,7 @@
               required
             />
             <label for="phoneRadio">Phone</label>
+
             <input
               type="radio"
               id="emailRadio"
@@ -145,13 +151,17 @@
             />
             <label for="emailRadio">Email</label>
           </fieldset>
+
           <label for="comments">Comments<span>*</span></label>
           <input type="text" id="comments" required />
-          <div id="errorList"></div>
+
+          <ul id="errorList" class="hide"></ul>
+
           <button type="submit" id="contactSubmit">Submit</button>
         </form>
       </section>
     </main>
+
     <footer>
       <small>Copyright © 2024 - Amigos Bakery</small>
       <p>This site is for entertainment and educational purposes only.</p>

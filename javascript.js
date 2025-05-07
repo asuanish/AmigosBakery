@@ -1,31 +1,24 @@
+// Amigos Bakery 2.0
+
 "use strict";
 
-// Light/Dark Mode Function
-
+// Themes
 function toggleMode() {
-  let body = document.getElementsByTagName("body")[0];
-  let img = document.getElementById("theme");
+  const body = document.body;
+  const themeIcon = document.getElementById("theme");
 
-  if (body.classList.contains("light-mode")) {
-    body.classList.remove("light-mode");
-    body.classList.add("dark-mode");
-  } else {
-    body.classList.remove("dark-mode");
-    body.classList.add("light-mode");
-  }
+  body.classList.toggle("light-mode");
+  body.classList.toggle("dark-mode");
 
-  if (img.src.endsWith("sun.png")) {
-    img.src = "images/moon.png";
-  } else {
-    img.src = "images/sun.png";
-  }
+  themeIcon.src = body.classList.contains("light-mode")
+    ? "images/sun.png"
+    : "images/moon.png";
 }
 
-// Favorite Pan Dulce Function (Web Storage)
-
-document.addEventListener("DOMContentLoaded", function () {
+// Favorite
+function setupFavoriteForm() {
   const form = document.getElementById("favorite-form");
-  const input = document.getElementById("favoriteSubmit");
+  const input = document.getElementById("favoriteNumber");
   const display = document.getElementById("favorite-display");
 
   const storedFavorite = localStorage.getItem("favoritePanDulce");
@@ -36,34 +29,38 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     const favorite = input.value.trim();
-    if (favorite !== "") {
+    if (favorite) {
       localStorage.setItem("favoritePanDulce", favorite);
       display.textContent = `Your favorite is: ${favorite}`;
       input.value = "";
     }
   });
-});
-
-// Game Function
-
-function playGame(event) {
-  let randNum = Math.floor(Math.random() * 10) + 1;
-  let numInput = document.getElementById("userDisplay");
-  let userInput = Number(numInput.value);
-  let output = document.getElementById("message");
-
-  if (randNum === 0 || userInput === 0 || userInput === "") {
-    output.innerHTML = "Please enter a number between 1 and 10.";
-  } else if (randNum === userInput) {
-    output.innerHTML = `You've won a $${userInput} prize!`;
-  } else {
-    output.innerHTML = `Sorry no prizes for you. Try again!`;
-  }
-  event.preventDefault();
 }
 
-// Contact Function
+// Game
+function setupGameForm() {
+  const gameForm = document.getElementById("guessingGame");
 
+  gameForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const randNum = Math.floor(Math.random() * 10) + 1;
+    const userInput = Number(
+      document.getElementById("userDisplay").value.trim()
+    );
+    const output = document.getElementById("message");
+
+    if (!userInput || userInput < 1 || userInput > 10) {
+      output.textContent = "❗ Please enter a valid number between 1 and 10.";
+    } else if (userInput === randNum) {
+      output.textContent = `🎉 Congratulations! You picked ${userInput} and won a prize!`;
+    } else {
+      output.textContent = `😞 Sorry, you picked ${userInput} but the winning number was ${randNum}. Try again!`;
+    }
+  });
+}
+
+// Contact
 function validateForm(event) {
   event.preventDefault();
 
@@ -73,16 +70,16 @@ function validateForm(event) {
   const comments = document.getElementById("comments");
   const errorList = document.getElementById("errorList");
 
-  let errors = [];
+  const errors = [];
   errorList.innerHTML = "";
   errorList.classList.add("hide");
-  name.classList.remove("error");
-  email.classList.remove("error");
-  phone.classList.remove("error");
-  comments.classList.remove("error");
+
+  [name, phone, email, comments].forEach((input) =>
+    input.classList.remove("error")
+  );
 
   const nameRegex = /[A-Za-z]\s[A-Za-z]/i;
-  const phoneRegex = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+  const phoneRegex = /^([+]?\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
   const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
 
   if (!name.value.match(nameRegex)) {
@@ -112,7 +109,6 @@ function validateForm(event) {
   }
 
   if (errors.length > 0) {
-    const errorList = document.getElementById("errorList");
     errorList.classList.remove("hide");
     errors.forEach((error) => {
       const li = document.createElement("li");
@@ -122,12 +118,10 @@ function validateForm(event) {
   }
 }
 
-// Event Listener
-
-document
-  .getElementById("productButtons")
-  .addEventListener("click", showProduct);
-document
-  .getElementById("contactSubmit")
-  .addEventListener("click", validateForm);
-document.getElementById("gameSubmit").addEventListener("click", playGame);
+document.addEventListener("DOMContentLoaded", function () {
+  setupFavoriteForm();
+  setupGameForm();
+  document
+    .getElementById("contactSubmit")
+    .addEventListener("click", validateForm);
+});
